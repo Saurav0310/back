@@ -11,161 +11,47 @@ spec:
   owner: 'vishal:guest'
   definition:
     openapi: 3.0.3
-  servers:
-    - url: TASK_API_URL
-      description: Task API
-  paths:
-    /task:
-      post:
-        tags:
-          - Create Task
-        summary: Create a new Task in Bsuite
-        consumes:
-          - application/json
-        produces:
-          - application/json
-        requestBody:
+info:
+  title: Sample API
+  version: 1.0.0
+  description: This is a sample API definition using OpenAPI 3.
+paths:
+  /users:
+    get:
+      summary: Get a list of users
+      responses:
+        '200':
+          description: Successful response
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/CreateTask'
-          required: true
-        responses:
-          '200':
-            description: Task Created Successfully in Bsuite.
-            content:
-              application/json:
-                schema:
-                  $ref: '#/components/schemas/SuccessCreateResponse'
-          '400':
-            description: Task Creation Failed in Bsuite.
-            content:
-              application/json:
-                schema:
-                  $ref: '#/components/schemas/FailureCreateResponse'
-          '500':
-            description: Some error occurred in Bsuite
-            content:
-              application/json:
-                schema:
-                  $ref: '#/components/schemas/ErrorResponse'
-    /task/{taskId}:
-      put:
-        tags:
-          - Update Task
-        summary: Update task in Bsuite
-        consumes:
-          - application/json
-        produces:
-          - application/json
-        parameters:
-          - name: taskId
-            in: path
-            required: true
-            type: string
-        requestBody:
+                type: array
+                items:
+                  type: string
+        '404':
+          description: Not Found
+  /users/{userId}:
+    parameters:
+      - name: userId
+        in: path
+        required: true
+        schema:
+          type: string
+    get:
+      summary: Get a user by ID
+      responses:
+        '200':
+          description: Successful response
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/UpdateTask'
-          required: true
-        responses:
-          '200':
-            description: Task Updated Successfully in Bsuite.
-            content:
-              application/json:
-                schema:
-                  $ref: '#/components/schemas/SuccessUpdateResponse'
-          '400':
-            description: Task Update Failed in Bsuite.
-            content:
-              application/json:
-                schema:
-                  $ref: '#/components/schemas/FailureUpdateResponse'
-          '500':
-            description: Some error occurred in Bsuite
-            content:
-              application/json:
-                schema:
-                  $ref: '#/components/schemas/ErrorResponse'
-      delete:
-        tags:
-          - Delete Task
-        summary: Delete task in Bsuite
-        consumes:
-          - application/json
-        produces:
-          - application/json
-        parameters:
-          - name: taskId
-            in: path
-            required: true
-            type: string
-        requestBody:
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/DeleteTask'
-          required: true
-        responses:
-          '200':
-            description: Task Deleted Successfully in Bsuite.
-            content:
-              application/json:
-                schema:
-                  $ref: '#/components/schemas/SuccessDeleteResponse'
-          '400':
-            description: Task Deletion Failed in Bsuite.
-            content:
-              application/json:
-                schema:
-                  $ref: '#/components/schemas/FailureDeleteResponse'
-          '500':
-            description: Some error occurred in Bsuite
-            content:
-              application/json:
-                schema:
-                  $ref: '#/components/schemas/ErrorResponse'
-
-components:
-  schemas:
-    CreateTask:
-      type: object
-      properties:
-        # Add properties for CreateTask schema
-    UpdateTask:
-      type: object
-      properties:
-        # Add properties for UpdateTask schema
-    DeleteTask:
-      type: object
-      properties:
-        # Add properties for DeleteTask schema
-    SuccessCreateResponse:
-      type: object
-      properties:
-        # Add properties for SuccessCreateResponse schema
-    FailureCreateResponse:
-      type: object
-      properties:
-        # Add properties for FailureCreateResponse schema
-    SuccessUpdateResponse:
-      type: object
-      properties:
-        # Add properties for SuccessUpdateResponse schema
-    FailureUpdateResponse:
-      type: object
-      properties:
-        # Add properties for FailureUpdateResponse schema
-    SuccessDeleteResponse:
-      type: object
-      properties:
-        # Add properties for SuccessDeleteResponse schema
-    FailureDeleteResponse:
-      type: object
-      properties:
-        # Add properties for FailureDeleteResponse schema
-    ErrorResponse:
-      type: object
-      properties:
-        # Add properties for ErrorResponse schema
+                type: object
+                properties:
+                  id:
+                    type: string
+                  name:
+                    type: string
+                  email:
+                    type: string
+        '404':
+          description: Not Found
