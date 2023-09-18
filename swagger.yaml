@@ -8,9 +8,10 @@ metadata:
 spec:
   type: openapi
   lifecycle: development
-  owner: alan@columbia.edu
+  owner: vishal:guest
   definition:
-    $openapi: 3.0.3
+    $openapi:
+    openapi: 3.0.3
 info:
   version: 1.0.0
   title: Bsuite Integration APIs
