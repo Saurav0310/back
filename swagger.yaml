@@ -10,4 +10,681 @@ spec:
   lifecycle: development
   owner: vishal:guest
   definition:
-    $openapi: https://api.apis.guru/v2/openapi.yaml
+    $openapi:openapi: 3.0.3
+		info:
+  		version: 1.0.0
+  title: Bsuite Integration APIs
+components:
+  securitySchemes:
+    cognito:
+      type: oauth2
+      flows:
+        clientCredentials:
+          authorizationUrl: AUTHORIZATION_URL
+          tokenUrl: TOKEN_URL
+          refreshUrl: REFRESH_URL
+          scopes:
+            READ_SCOPE: permission to read details
+            WRITE_SCOPE: permision to write / modify details
+    api_key:
+      type: apiKey
+      name: x-api-key
+      in: header
+  schemas:
+    CreateTask:
+      type: object
+      properties:
+        apiType:
+          type: string
+          example: sync
+          enum:
+            - sync
+            - async
+        mode:
+          type: string
+          example: CANONICAL
+        version:
+          type: string
+          example: "1"
+        UUID:
+          type: string
+          example: 50f4b4e5-b123-11eb-ae98-0754274b1882
+        type:
+          type: string
+          example: TASK
+        company:
+          type: string
+          example: Tabcorp
+        class:
+          type: string
+          example: Wagering
+        msg_format:
+          type: string
+          example: MQ
+        return_to:
+          type: string
+          example: abhishek.singh2@tabcorp.com.au
+        recv_timestamp:
+          type: string
+          example: 2023-06-01 00 :08:00 +0000 UTC
+        mtype:
+          type: string
+          example: NEW
+        contract:
+          type: string
+          example: Wagering
+        worktype:
+          type: string
+          example: IMAC
+        client_jobno:
+          type: string
+          example: INC2412163
+        priority:
+          type: string
+          example: "3"
+        client_comment:
+          type: string
+          example: ""
+        sitecode:
+          type: string
+          example: "2503"
+        site_addr:
+          type: string
+          example: Sturt Highway, Gol Gol, NSW, 2738, Australia
+        site_city:
+          type: string
+          example: NSW
+        site_state:
+          type: string
+          example: NSW
+        site_postcode:
+          type: string
+          example: "2738"
+        site_country:
+          type: string
+          example: Australia
+        site_phone:
+          type: string
+          example: 03 5024 8492
+        site_email:
+          type: string
+          example: ""
+        equipment_location:
+          type: string
+          example: ""
+        equipment_group:
+          type: string
+          example: ""
+        equipment_make:
+          type: string
+          example: Unknown
+        equipment_model:
+          type: string
+          example: Unknown
+        equipment_serial_no:
+          type: string
+          example: ""
+        problem_code:
+          type: string
+          example: OLGR
+        problem_category:
+          type: string
+          example: Keno and Wagering Venue
+        problem_type:
+          type: string
+          example: OLGR
+        problem_timestamp:
+          type: string
+          example: ""
+        problem_description:
+          type: string
+          example: New Problem value
+        customer_name:
+          type: string
+          example: ABCD
+        customer_mobile:
+          type: string
+          example: ""
+        customer_phone:
+          type: string
+          example: ""
+        customer_email:
+          type: string
+          example: ""
+        customer_jobno:
+          type: string
+          example: ""
+        operator:
+          type: string
+          example: westmans
+        site_name:
+          type: string
+          example: 2503 GOL GOL Hotel
+        techreq:
+          type: string
+          example: ""
+        raw_message:
+          type: string
+          example: ""
+        data:
+          type: string
+          example: ""
+    UpdateTask:
+      type: object
+      properties:
+        apiType:
+          type: string
+          example: sync
+          enum:
+            - sync
+            - async
+        mode:
+          type: string
+          example: CANONICAL
+        version:
+          type: string
+          example: "1"
+        UUID:
+          type: string
+          example: 50f4b4e5-b123-11eb-ae98-0754274b1882
+        type:
+          type: string
+          example: TASK
+        company:
+          type: string
+          example: Tabcorp
+        class:
+          type: string
+          example: Wagering
+        msg_format:
+          type: string
+          example: MQ
+        return_to:
+          type: string
+          example: abhishek.singh2@tabcorp.com.au
+        recv_timestamp:
+          type: string
+          example: 2023-06-01 00 :08:00 +0000 UTC
+        mtype:
+          type: string
+          example: UPDATE
+        contract:
+          type: string
+          example: Wagering
+        worktype:
+          type: string
+          example: IMAC
+        client_jobno:
+          type: string
+          example: INC2412212
+        priority:
+          type: string
+          example: "3"
+        client_comment:
+          type: string
+          example: ""
+        sitecode:
+          type: string
+          example: "2503"
+        site_addr:
+          type: string
+          example: Sturt Highway, Gol Gol, NSW, 2738, Australia
+        site_city:
+          type: string
+          example: NSW
+        site_state:
+          type: string
+          example: NSW
+        site_postcode:
+          type: string
+          example: "2738"
+        site_country:
+          type: string
+          example: Australia
+        site_phone:
+          type: string
+          example: 03 5024 8492
+        site_email:
+          type: string
+          example: ""
+        equipment_location:
+          type: string
+          example: ""
+        equipment_group:
+          type: string
+          example: ""
+        equipment_make:
+          type: string
+          example: Unknown
+        equipment_model:
+          type: string
+          example: Unknown
+        equipment_serial_no:
+          type: string
+          example: ""
+        problem_code:
+          type: string
+          example: OLGR
+        problem_category:
+          type: string
+          example: Keno and Wagering Venue
+        problem_type:
+          type: string
+          example: OLGR
+        problem_timestamp:
+          type: string
+          example: ""
+        problem_description:
+          type: string
+          example: New Problem value
+        customer_name:
+          type: string
+          example: ABCD
+        customer_mobile:
+          type: string
+          example: ""
+        customer_phone:
+          type: string
+          example: ""
+        customer_email:
+          type: string
+          example: ""
+        customer_jobno:
+          type: string
+          example: ""
+        operator:
+          type: string
+          example: westmans
+        site_name:
+          type: string
+          example: 2503 GOL GOL Hotel
+        techreq:
+          type: string
+          example: ""
+        raw_message:
+          type: string
+          example: ""
+        data:
+          type: string
+          example: ""
+    DeleteTask:
+      type: object
+      properties:
+        apiType:
+          type: string
+          example: sync
+          enum:
+            - sync
+            - async
+        mode:
+          type: string
+          example: CANONICAL
+        type:
+          type: string
+          example: TASK
+        company:
+          type: string
+          example: Tabcorp
+        msg_format:
+          type: string
+          example: MQ
+        return_to:
+          type: string
+          example: abhishek.singh2@tabcorp.com.au
+        recv_timestamp:
+          type: string
+          example: 2023-06-01 00 :08:00 +0000 UTC
+        mtype:
+          type: string
+          example: CANCEL
+        worktype:
+          type: string
+          example: IMAC
+        client_jobno:
+          type: string
+          example: INC2412212
+    SuccessCreateResponse:
+      type: object
+      properties:
+        data:
+          type: object
+          properties:
+            message:
+              type: string
+              example: FieldTask[PAK][NEW]-- PAK sent via MQ, client_jobno [INC2412163]
+            type:
+              type: string
+              example: PAK
+            mtype:
+              type: string
+              example: NEW
+            taskId:
+              type: string
+              example: "9026406"
+            external_client_id:
+              type: string
+              example: 16uqjv74ird7udfbg20evau9v
+            ClientId:
+              type: string
+              example: INC2412163
+            class:
+              type: string
+              example: genericCanon
+            uuid:
+              type: string
+              example: 19d5e105-7f78-4b9c-8666-282b726c590b
+            log:
+              type: string
+              example: /nas/logs/glue/genericCanon.log
+    FailureCreateResponse:
+      type: object
+      properties:
+        error:
+          type: object
+          properties:
+            message:
+              type: string
+              example: Task already exists in Bsuite [INC2412163]
+            type:
+              type: string
+              example: NAK
+            mtype:
+              type: string
+              example: NEW
+            external_client_id:
+              type: string
+              example: 34gcdcql6b1af2uansqd0fu0tu
+            exception:
+              type: string
+              example: GlueException
+            exFile:
+              type: string
+              example: /var/www/html/src/hydra-glue/main/core/B2BBaseService.php
+            exLine:
+              type: string
+              example: "1469"
+            class:
+              type: string
+              example: genericCanon
+            uuid:
+              type: string
+              example: 50f4b4e5-b123-11eb-ae98-0754274b1882
+            log:
+              type: string
+              example: /nas/logs/glue/genericCanon.log
+    SuccessUpdateResponse:
+      type: object
+      properties:
+        data:
+          type: object
+          properties:
+            message:
+              type: string
+              example: FieldTask[PAK][UPDATE]-- PAK sent via MQ, client_jobno [INC2412163]
+            type:
+              type: string
+              example: PAK
+            mtype:
+              type: string
+              example: UPDATE
+            taskId:
+              type: string
+              example: "9026406"
+            external_client_id:
+              type: string
+              example: 16uqjv74ird7udfbg20evau9v
+            ClientId:
+              type: string
+              example: INC2412163
+            class:
+              type: string
+              example: genericCanon
+            uuid:
+              type: string
+              example: 19d5e105-7f78-4b9c-8666-282b726c590b
+            log:
+              type: string
+              example: /nas/logs/glue/genericCanon.log
+    FailureUpdateResponse:
+      type: object
+      properties:
+        error:
+          type: object
+          properties:
+            message:
+              type: string
+              example: No task found for that ClientFieldTaskNumber [INC2412163]
+            type:
+              type: string
+              example: NAK
+            mtype:
+              type: string
+              example: UPDATE
+            external_client_id:
+              type: string
+              example: 16uqjv74ird7udfbg20evau9v
+            exception:
+              type: string
+              example: GlueException
+            exFile:
+              type: string
+              example: /var/www/html/src/hydra-glue/main/core/B2BBaseService.php
+            exLine:
+              type: string
+              example: "1469"
+            class:
+              type: string
+              example: genericCanon
+            uuid:
+              type: string
+              example: 19d5e105-7f78-4b9c-8666-282b726c590b
+            log:
+              type: string
+              example: /nas/logs/glue/genericCanon.log
+    SuccessCancelResponse:
+      type: object
+      properties:
+        data:
+          type: object
+          properties:
+            message:
+              type: string
+              example: FieldTask[PAK][CANCEL]-- PAK sent via MQ, client_jobno [INC2412163]
+            type:
+              type: string
+              example: PAK
+            mtype:
+              type: string
+              example: CANCEL
+            taskId:
+              type: string
+              example: "9026406"
+            external_client_id:
+              type: string
+              example: 16uqjv74ird7udfbg20evau9v
+            ClientId:
+              type: string
+              example: INC2412163
+            class:
+              type: string
+              example: genericCanon
+            uuid:
+              type: string
+              example: 19d5e105-7f78-4b9c-8666-282b726c590b
+            log:
+              type: string
+              example: /nas/logs/glue/genericCanon.log
+    FailureCancelResponse:
+      type: object
+      properties:
+        error:
+          type: object
+          properties:
+            message:
+              type: string
+              example: No task found for that ClientFieldTaskNumber [INC2412163]
+            type:
+              type: string
+              example: NAK
+            mtype:
+              type: string
+              example: CANCEL
+            external_client_id:
+              type: string
+              example: 16uqjv74ird7udfbg20evau9v
+            exception:
+              type: string
+              example: GlueException
+            exFile:
+              type: string
+              example: /var/www/html/src/hydra-glue/main/core/B2BBaseService.php
+            exLine:
+              type: string
+              example: "1469"
+            class:
+              type: string
+              example: genericCanon
+            uuid:
+              type: string
+              example: 19d5e105-7f78-4b9c-8666-282b726c590b
+            log:
+              type: string
+              example: /nas/logs/glue/genericCanon.log
+    ErrorResponse:
+      type: object
+      properties:
+        error:
+          type: object
+          properties:
+            message:
+              type: string
+              example: getaddrinfo ENOTFOUND
+                internal-bsuit-loadb-4duvokkszr1u-1365286396.ap-southeast-2.elb.amazonaws.com
+servers:
+  - url: TASK_API_URL
+    description: Task API
+paths:
+  /task:
+    post:
+      tags:
+        - Create Task
+      summary: Create a new Task in Bsuite
+      consumes:
+        - application/json
+      produces:
+        - application/json
+      security:
+        - cognito:
+            - write
+          api_key: true
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/CreateTask"
+        required: true
+      responses:
+        "200":
+          description: Task Created Successfully in Bsuite.
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/SuccessCreateResponse"
+        "400":
+          description: Task Creation Failed in Bsuite.
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/FailureCreateResponse"
+        "500":
+          description: Some error occured in Bsuite
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/ErrorResponse"
+  "/task/{taskId}":
+    put:
+      tags:
+        - Update Task
+      summary: Update task in Bsuite
+      consumes:
+        - application/json
+      produces:
+        - application/json
+      security:
+        - cognito:
+            - write
+          api_key: true
+      parameters:
+        - name: taskId
+          in: path
+          required: true
+          type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/UpdateTask"
+        required: true
+      responses:
+        "200":
+          description: Task Created Successfully in Bsuite.
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/SuccessUpdateResponse"
+        "400":
+          description: Task Creation Failed in Bsuite.
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/FailureUpdateResponse"
+        "500":
+          description: Some error occured in Bsuite
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/ErrorResponse"
+    patch:
+      tags:
+        - Cancel Task
+      summary: Cancel Task in Bsuite
+      consumes:
+        - application/json
+      produces:
+        - application/json
+      security:
+        - cognito:
+            - write
+          api_key: true
+      parameters:
+        - name: taskId
+          in: path
+          required: true
+          type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: application/json
+              $ref: "#/components/schemas/DeleteTask"
+        required: true
+      responses:
+        "200":
+          description: Task deletion success in Bsuite.
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/SuccessCancelResponse"
+        "400":
+          description: Task deletion Failed in Bsuite.
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/FailureCancelResponse"
+        "500":
+          description: Some Error occuerd in Bsuite.
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/ErrorResponse"
