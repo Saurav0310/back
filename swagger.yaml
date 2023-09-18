@@ -1,10 +1,8 @@
----
 apiVersion: backstage.io/v1alpha1
 kind: API
 metadata:
   name: myapp-gitlab
   description: Demo of Django REST Framework JSON-API
-
   tags:
     - rest
 spec:
@@ -40,14 +38,14 @@ components:
           type: string
           example: sync
           enum:
-          - sync
-          - async
+            - sync
+            - async
         mode:
           type: string
           example: CANONICAL
         version:
           type: string
-          example: '1'
+          example: "1"
         UUID:
           type: string
           example: 50f4b4e5-b123-11eb-ae98-0754274b1882
@@ -83,13 +81,13 @@ components:
           example: INC2412163
         priority:
           type: string
-          example: '3'
+          example: "3"
         client_comment:
           type: string
-          example: ''
+          example: ""
         sitecode:
           type: string
-          example: '2503'
+          example: "2503"
         site_addr:
           type: string
           example: Sturt Highway, Gol Gol, NSW, 2738, Australia
@@ -101,7 +99,7 @@ components:
           example: NSW
         site_postcode:
           type: string
-          example: '2738'
+          example: "2738"
         site_country:
           type: string
           example: Australia
@@ -110,13 +108,13 @@ components:
           example: 03 5024 8492
         site_email:
           type: string
-          example: ''
+          example: ""
         equipment_location:
           type: string
-          example: ''
+          example: ""
         equipment_group:
           type: string
-          example: ''
+          example: ""
         equipment_make:
           type: string
           example: Unknown
@@ -125,7 +123,7 @@ components:
           example: Unknown
         equipment_serial_no:
           type: string
-          example: ''
+          example: ""
         problem_code:
           type: string
           example: OLGR
@@ -137,7 +135,7 @@ components:
           example: OLGR
         problem_timestamp:
           type: string
-          example: ''
+          example: ""
         problem_description:
           type: string
           example: New Problem value
@@ -146,16 +144,16 @@ components:
           example: ABCD
         customer_mobile:
           type: string
-          example: ''
+          example: ""
         customer_phone:
           type: string
-          example: ''
+          example: ""
         customer_email:
           type: string
-          example: ''
+          example: ""
         customer_jobno:
           type: string
-          example: ''
+          example: ""
         operator:
           type: string
           example: westmans
@@ -164,13 +162,13 @@ components:
           example: 2503 GOL GOL Hotel
         techreq:
           type: string
-          example: ''
+          example: ""
         raw_message:
           type: string
-          example: ''
+          example: ""
         data:
           type: string
-          example: ''
+          example: ""
     UpdateTask:
       type: object
       properties:
@@ -178,14 +176,14 @@ components:
           type: string
           example: sync
           enum:
-          - sync
-          - async
+            - sync
+            - async
         mode:
           type: string
           example: CANONICAL
         version:
           type: string
-          example: '1'
+          example: "1"
         UUID:
           type: string
           example: 50f4b4e5-b123-11eb-ae98-0754274b1882
@@ -221,13 +219,13 @@ components:
           example: INC2412212
         priority:
           type: string
-          example: '3'
+          example: "3"
         client_comment:
           type: string
-          example: ''
+          example: ""
         sitecode:
           type: string
-          example: '2503'
+          example: "2503"
         site_addr:
           type: string
           example: Sturt Highway, Gol Gol, NSW, 2738, Australia
@@ -239,7 +237,7 @@ components:
           example: NSW
         site_postcode:
           type: string
-          example: '2738'
+          example: "2738"
         site_country:
           type: string
           example: Australia
@@ -248,13 +246,13 @@ components:
           example: 03 5024 8492
         site_email:
           type: string
-          example: ''
+          example: ""
         equipment_location:
           type: string
-          example: ''
+          example: ""
         equipment_group:
           type: string
-          example: ''
+          example: ""
         equipment_make:
           type: string
           example: Unknown
@@ -263,7 +261,7 @@ components:
           example: Unknown
         equipment_serial_no:
           type: string
-          example: ''
+          example: ""
         problem_code:
           type: string
           example: OLGR
@@ -275,7 +273,7 @@ components:
           example: OLGR
         problem_timestamp:
           type: string
-          example: ''
+          example: ""
         problem_description:
           type: string
           example: New Problem value
@@ -284,16 +282,16 @@ components:
           example: ABCD
         customer_mobile:
           type: string
-          example: ''
+          example: ""
         customer_phone:
           type: string
-          example: ''
+          example: ""
         customer_email:
           type: string
-          example: ''
+          example: ""
         customer_jobno:
           type: string
-          example: ''
+          example: ""
         operator:
           type: string
           example: westmans
@@ -302,13 +300,13 @@ components:
           example: 2503 GOL GOL Hotel
         techreq:
           type: string
-          example: ''
+          example: ""
         raw_message:
           type: string
-          example: ''
+          example: ""
         data:
           type: string
-          example: ''
+          example: ""
     DeleteTask:
       type: object
       properties:
@@ -316,8 +314,8 @@ components:
           type: string
           example: sync
           enum:
-          - sync
-          - async
+            - sync
+            - async
         mode:
           type: string
           example: CANONICAL
@@ -362,7 +360,7 @@ components:
               example: NEW
             taskId:
               type: string
-              example: '9026406'
+              example: "9026406"
             external_client_id:
               type: string
               example: 16uqjv74ird7udfbg20evau9v
@@ -377,7 +375,7 @@ components:
               example: 19d5e105-7f78-4b9c-8666-282b726c590b
             log:
               type: string
-              example: "/nas/logs/glue/genericCanon.log"
+              example: /nas/logs/glue/genericCanon.log
     FailureCreateResponse:
       type: object
       properties:
@@ -401,10 +399,10 @@ components:
               example: GlueException
             exFile:
               type: string
-              example: "/var/www/html/src/hydra-glue/main/core/B2BBaseService.php"
+              example: /var/www/html/src/hydra-glue/main/core/B2BBaseService.php
             exLine:
               type: string
-              example: '1469'
+              example: "1469"
             class:
               type: string
               example: genericCanon
@@ -413,7 +411,7 @@ components:
               example: 50f4b4e5-b123-11eb-ae98-0754274b1882
             log:
               type: string
-              example: "/nas/logs/glue/genericCanon.log"
+              example: /nas/logs/glue/genericCanon.log
     SuccessUpdateResponse:
       type: object
       properties:
@@ -431,7 +429,7 @@ components:
               example: UPDATE
             taskId:
               type: string
-              example: '9026406'
+              example: "9026406"
             external_client_id:
               type: string
               example: 16uqjv74ird7udfbg20evau9v
@@ -446,7 +444,7 @@ components:
               example: 19d5e105-7f78-4b9c-8666-282b726c590b
             log:
               type: string
-              example: "/nas/logs/glue/genericCanon.log"
+              example: /nas/logs/glue/genericCanon.log
     FailureUpdateResponse:
       type: object
       properties:
@@ -470,10 +468,10 @@ components:
               example: GlueException
             exFile:
               type: string
-              example: "/var/www/html/src/hydra-glue/main/core/B2BBaseService.php"
+              example: /var/www/html/src/hydra-glue/main/core/B2BBaseService.php
             exLine:
               type: string
-              example: '1469'
+              example: "1469"
             class:
               type: string
               example: genericCanon
@@ -482,7 +480,7 @@ components:
               example: 19d5e105-7f78-4b9c-8666-282b726c590b
             log:
               type: string
-              example: "/nas/logs/glue/genericCanon.log"
+              example: /nas/logs/glue/genericCanon.log
     SuccessCancelResponse:
       type: object
       properties:
@@ -500,7 +498,7 @@ components:
               example: CANCEL
             taskId:
               type: string
-              example: '9026406'
+              example: "9026406"
             external_client_id:
               type: string
               example: 16uqjv74ird7udfbg20evau9v
@@ -515,7 +513,7 @@ components:
               example: 19d5e105-7f78-4b9c-8666-282b726c590b
             log:
               type: string
-              example: "/nas/logs/glue/genericCanon.log"
+              example: /nas/logs/glue/genericCanon.log
     FailureCancelResponse:
       type: object
       properties:
@@ -539,10 +537,10 @@ components:
               example: GlueException
             exFile:
               type: string
-              example: "/var/www/html/src/hydra-glue/main/core/B2BBaseService.php"
+              example: /var/www/html/src/hydra-glue/main/core/B2BBaseService.php
             exLine:
               type: string
-              example: '1469'
+              example: "1469"
             class:
               type: string
               example: genericCanon
@@ -551,7 +549,7 @@ components:
               example: 19d5e105-7f78-4b9c-8666-282b726c590b
             log:
               type: string
-              example: "/nas/logs/glue/genericCanon.log"
+              example: /nas/logs/glue/genericCanon.log
     ErrorResponse:
       type: object
       properties:
@@ -560,132 +558,133 @@ components:
           properties:
             message:
               type: string
-              example: getaddrinfo ENOTFOUND internal-bsuit-loadb-4duvokkszr1u-1365286396.ap-southeast-2.elb.amazonaws.com
+              example: getaddrinfo ENOTFOUND
+                internal-bsuit-loadb-4duvokkszr1u-1365286396.ap-southeast-2.elb.amazonaws.com
 servers:
-- url: TASK_API_URL
-  description: Task API
+  - url: TASK_API_URL
+    description: Task API
 paths:
-  "/task":
+  /task:
     post:
       tags:
-      - Create Task
+        - Create Task
       summary: Create a new Task in Bsuite
       consumes:
-      - application/json
+        - application/json
       produces:
-      - application/json
+        - application/json
       security:
-      - cognito:
-        - write
-        api_key: true
+        - cognito:
+            - write
+          api_key: true
       requestBody:
         content:
           application/json:
             schema:
-              "$ref": "#/components/schemas/CreateTask"
+              $ref: "#/components/schemas/CreateTask"
         required: true
       responses:
-        '200':
+        "200":
           description: Task Created Successfully in Bsuite.
           content:
             application/json:
               schema:
-                "$ref": "#/components/schemas/SuccessCreateResponse"
-        '400':
+                $ref: "#/components/schemas/SuccessCreateResponse"
+        "400":
           description: Task Creation Failed in Bsuite.
           content:
             application/json:
               schema:
-                "$ref": "#/components/schemas/FailureCreateResponse"
-        '500':
+                $ref: "#/components/schemas/FailureCreateResponse"
+        "500":
           description: Some error occured in Bsuite
           content:
             application/json:
               schema:
-                "$ref": "#/components/schemas/ErrorResponse"
+                $ref: "#/components/schemas/ErrorResponse"
   "/task/{taskId}":
     put:
       tags:
-      - Update Task
+        - Update Task
       summary: Update task in Bsuite
       consumes:
-      - application/json
+        - application/json
       produces:
-      - application/json
+        - application/json
       security:
-      - cognito:
-        - write
-        api_key: true
+        - cognito:
+            - write
+          api_key: true
       parameters:
-      - name: taskId
-        in: path
-        required: true
-        type: string
+        - name: taskId
+          in: path
+          required: true
+          type: string
       requestBody:
         content:
           application/json:
             schema:
-              "$ref": "#/components/schemas/UpdateTask"
+              $ref: "#/components/schemas/UpdateTask"
         required: true
       responses:
-        '200':
+        "200":
           description: Task Created Successfully in Bsuite.
           content:
             application/json:
               schema:
-                "$ref": "#/components/schemas/SuccessUpdateResponse"
-        '400':
+                $ref: "#/components/schemas/SuccessUpdateResponse"
+        "400":
           description: Task Creation Failed in Bsuite.
           content:
             application/json:
               schema:
-                "$ref": "#/components/schemas/FailureUpdateResponse"
-        '500':
+                $ref: "#/components/schemas/FailureUpdateResponse"
+        "500":
           description: Some error occured in Bsuite
           content:
             application/json:
               schema:
-                "$ref": "#/components/schemas/ErrorResponse"
+                $ref: "#/components/schemas/ErrorResponse"
     patch:
       tags:
-      - Cancel Task
+        - Cancel Task
       summary: Cancel Task in Bsuite
       consumes:
-      - application/json
+        - application/json
       produces:
-      - application/json
+        - application/json
       security:
-      - cognito:
-        - write
-        api_key: true
+        - cognito:
+            - write
+          api_key: true
       parameters:
-      - name: taskId
-        in: path
-        required: true
-        type: string
+        - name: taskId
+          in: path
+          required: true
+          type: string
       requestBody:
         content:
           application/json:
             schema:
               type: application/json
-              "$ref": "#/components/schemas/DeleteTask"
+              $ref: "#/components/schemas/DeleteTask"
         required: true
       responses:
-        '200':
+        "200":
           description: Task deletion success in Bsuite.
           content:
             application/json:
               schema:
-                "$ref": "#/components/schemas/SuccessCancelResponse"
-        '400':
+                $ref: "#/components/schemas/SuccessCancelResponse"
+        "400":
           description: Task deletion Failed in Bsuite.
           content:
             application/json:
               schema:
-                "$ref": "#/components/schemas/FailureCancelResponse"
-        '500':
+                $ref: "#/components/schemas/FailureCancelResponse"
+        "500":
           description: Some Error occuerd in Bsuite.
           content:
             application/json:
               schema:
-                "$ref": "#/components/schemas/ErrorResponse"
+                $ref: "#/components/schemas/ErrorResponse"
