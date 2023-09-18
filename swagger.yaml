@@ -11,8 +11,8 @@ spec:
   owner: vishal:guest
   definition:
     $openapi:openapi: 3.0.3
-		info:
-  		version: 1.0.0
+info:
+  	version: 1.0.0
   title: Bsuite Integration APIs
 components:
   securitySchemes:
